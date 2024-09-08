@@ -38,10 +38,15 @@ class _LayoutState extends State<Layout> {
                   padding: const EdgeInsets.all(8.0),
                   child: Stack(
                     children: [
-                      if(cubit.get(context).requestsLength > 0) IgnorePointer(
+                      if(cubit.get(context).requestsLength>0)
+                        IgnorePointer(
                         child: Container(
-                          height: 8,
-                          width: 8,
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 4.0,top: 2),
+                            child: Text('${cubit.get(context).requestsLength??0}',style: TextStyle(color: Colors.white,fontSize: 11),),
+                          ),
+                          height: 18,
+                          width: 18,
                           decoration: BoxDecoration(
                             color: Colors.redAccent,
                             shape: BoxShape.circle,
